@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="WL8-Ji-SYP">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.14"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="yJq-K3-8yE">
+            <objects>
+                <navigationController id="WL8-Ji-SYP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="7s3-R1-HXf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YIT-iq-zG7" kind="relationship" relationship="rootViewController" id="7WZ-yf-jcO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tjo-nz-ts0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="776"/>
+        </scene>
+        <!--Choose an Image-->
+        <scene sceneID="M0q-B1-vWP">
+            <objects>
+                <viewController id="YIT-iq-zG7" customClass="ImageSelectorViewController" customModule="Vision_VoiceOver" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qwh-xS-kot"/>
+                        <viewControllerLayoutGuide type="bottom" id="DpN-8a-LUh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SP7-GL-CTs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="92F-Y5-vCN">
+                                <rect key="frame" x="156.5" y="276.5" width="63" height="115"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeq-AW-suq">
+                                        <rect key="frame" x="0.0" y="0.0" width="63" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <state key="normal" title="Camera"/>
+                                        <connections>
+                                            <action selector="imageCameraButtonDidPress:" destination="YIT-iq-zG7" eventType="touchUpInside" id="X9l-5q-gz0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uWb-IW-yIX">
+                                        <rect key="frame" x="0.0" y="41" width="63" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <state key="normal" title="Gallery"/>
+                                        <connections>
+                                            <action selector="imageGalleryButtonDidPress:" destination="YIT-iq-zG7" eventType="touchUpInside" id="nPI-oA-Ncm"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8n-Nx-PNY">
+                                        <rect key="frame" x="0.0" y="82" width="63" height="33"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <state key="normal" title="Files"/>
+                                        <connections>
+                                            <action selector="documentSelectorButtonDidPress:" destination="YIT-iq-zG7" eventType="touchUpInside" id="Jss-RW-NX1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Drop an image anywhere onto this screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="079-2E-g5O">
+                                <rect key="frame" x="29.5" y="631" width="317" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="92F-Y5-vCN" firstAttribute="centerY" secondItem="SP7-GL-CTs" secondAttribute="centerY" id="1xY-ZA-4tA"/>
+                            <constraint firstItem="DpN-8a-LUh" firstAttribute="top" secondItem="079-2E-g5O" secondAttribute="bottom" constant="16" id="3BS-E2-aUy"/>
+                            <constraint firstItem="079-2E-g5O" firstAttribute="centerX" secondItem="SP7-GL-CTs" secondAttribute="centerX" id="qe5-DL-jaG"/>
+                            <constraint firstItem="92F-Y5-vCN" firstAttribute="centerX" secondItem="SP7-GL-CTs" secondAttribute="centerX" id="trg-FF-GRv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Choose an Image" largeTitleDisplayMode="always" id="aRq-V7-1Yl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DUt-ra-iQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="974" y="776"/>
+        </scene>
+    </scenes>
+</document>
