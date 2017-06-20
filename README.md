@@ -8,6 +8,7 @@ Last tested on iOS 11 beta 1
 
 ## Project Structure
 `ImageVision.framework` - A standard wrapper framework for using ImageVision as well as VoiceOver string builders
+Framework is located in [this repo](https://github.com/ualch9/ImageVision)
 
 `Vision+VoiceOver-iOS` - Example iOS app for interacting with `ImageVision`
 
